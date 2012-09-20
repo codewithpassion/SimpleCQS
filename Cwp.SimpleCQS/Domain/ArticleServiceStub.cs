@@ -3,6 +3,7 @@
     using System.Collections.Generic;
     using System.Linq;
 
+    using CwP.SimpleCQS.Domain.Fakes;
     using CwP.SimpleCQS.Domain.Queries;
 
     public interface IArticleQueryService
@@ -17,7 +18,7 @@
 
     public class ArticleServiceStub : IArticleQueryService, IArticleService
     {
-        private List<Article> articles = new List<Article> { new Article(), new Article(), };
+        private readonly List<Article> articles = new List<Article>(ArticleFakes.ThreeFakeArticles);
 
         public Article AddArticle(Article article)
         {

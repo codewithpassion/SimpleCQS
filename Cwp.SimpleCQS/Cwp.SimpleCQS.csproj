@@ -67,28 +67,32 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ArticleViewModel.cs" />
+    <Compile Include="Article\ArticleView.xaml.cs">
+      <DependentUpon>ArticleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Article\ArticleViewModel.cs" />
+    <Compile Include="Common\CaliburnModule.cs" />
+    <Compile Include="Common\Shell\IRootView.cs" />
+    <Compile Include="Common\Shell\ShellView.xaml.cs">
+      <DependentUpon>ShellView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Shell\ShellViewModel.cs" />
+    <Compile Include="Common\SimpleCQSBootstrapper.cs" />
     <Compile Include="Domain\Article.cs" />
     <Compile Include="Domain\ArticleServiceStub.cs" />
     <Compile Include="Domain\Commands\ArticleCommandExecutor.cs" />
     <Compile Include="Domain\Commands\CreateNewArticleCommand.cs" />
+    <Compile Include="Domain\Fakes\ArticleFakes.cs" />
     <Compile Include="Domain\Messages\NewArticleMessage.cs" />
     <Compile Include="Domain\Queries\GetAllArticlesQuery.cs" />
     <Compile Include="Domain\Queries\GetArticlesWithColorQuery.cs" />
     <Compile Include="Domain\Queries\IPredicateQuery.cs" />
     <Compile Include="Domain\Queries\IQuery.cs" />
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="SimpleCqsModule.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -115,7 +119,16 @@
     </None>
     <AppDesigner Include="Properties\" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Page Include="Article\ArticleView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Common\Shell\ShellView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
