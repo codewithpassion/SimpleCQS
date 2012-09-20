@@ -11,7 +11,8 @@
         public override void Load()
         {
             this.Kernel.Bind<IShellViewModel>().To<ShellViewModel>();
-            this.Kernel.Bind<IEventAggregator>().To<EventAggregator>();
+            this.Kernel.Bind<IEventAggregator>().To<EventAggregator>().InSingletonScope();
+            this.Kernel.Bind<IWindowManager>().To<WindowManager>();
         }
     }
 }

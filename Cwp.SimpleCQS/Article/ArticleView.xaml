@@ -20,7 +20,8 @@
             <TextBlock Text="Articles:" />
             <ItemsControl x:Name="Articles" ItemTemplate="{StaticResource ResourceKey=ArticlesTemplate}" d:DataContext="{x:Static Member=Fakes:ArticleFakes.ThreeFakeArticles}">
             </ItemsControl>
-            <Button x:Name="LoadAllArticles" Content="Load articles"></Button>
+            <Button x:Name="LoadAllArticles" Content="Load articles" />
+            <Button x:Name="AddArticle" Content="Add article" />
         </StackPanel>
     </Grid>
 </UserControl>

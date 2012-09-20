@@ -4,7 +4,12 @@
 
     using CwP.SimpleCQS.Domain.Messages;
 
-    public class ArticleCommandExecutor
+    public interface IArticleCommandExecutor
+    {
+        void Execute(IArticleCommand command);
+    }
+
+    public class ArticleCommandExecutor : IArticleCommandExecutor
     {
         private readonly IArticleService articleService;
 

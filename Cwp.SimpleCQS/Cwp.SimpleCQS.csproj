@@ -75,6 +75,10 @@
       <DependentUpon>ArticleView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Article\ArticleViewModel.cs" />
+    <Compile Include="Article\NewArticleView.xaml.cs">
+      <DependentUpon>NewArticleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Article\NewArticleViewModel.cs" />
     <Compile Include="Common\CaliburnModule.cs" />
     <Compile Include="Common\Shell\IRootView.cs" />
     <Compile Include="Common\Shell\ShellView.xaml.cs">
@@ -121,6 +125,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="Article\ArticleView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Article\NewArticleView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
